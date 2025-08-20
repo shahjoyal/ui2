@@ -43,7 +43,7 @@
       background: white;
       border-radius: 15px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      padding: 30px;
+      padding: 0 0 30px 0; /* remove top padding to fit heading strip */
       width: 80%;   /* Bigger cards */
       max-width: 700px;
       text-align: center;
@@ -65,14 +65,33 @@
       transition: transform 0.3s ease-in-out;
     }
 
+    /* Card heading strip */
     .card h3 {
-      margin-bottom: 20px;
-      color: #0a1a50;
+      margin: 0;
+      padding: 15px;
+      background: #0a1a50;
+      color: white;
       font-size: 1.4rem;
+      border-radius: 15px 15px 0 0;
+      animation: glowIn 1s ease-in-out;
+    }
+
+    /* Heading glow animation */
+    @keyframes glowIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        box-shadow: 0 0 0px #0a1a50;
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        box-shadow: 0 4px 12px rgba(10,26,80,0.5);
+      }
     }
 
     .file-input {
-      margin: 15px 0;
+      margin: 20px 0;
     }
 
     .btn {
